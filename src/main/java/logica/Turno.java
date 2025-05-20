@@ -23,10 +23,10 @@ public class Turno implements Serializable {
     private String hora_turno;
     private String afeccion;
     @ManyToOne
-    @JoinColumn(name = "id_turno")//como se llama la relacion
+    @JoinColumn(name = "id_odonto")//como se llama la relacion
     private Odontologo odonto;
     @ManyToOne
-    @JoinColumn(name = "id_turno2")//como se llama la relacion
+    @JoinColumn(name = "id_pacien")//como se llama la relacion
     private Paciente pacien;
 
     public Turno() {

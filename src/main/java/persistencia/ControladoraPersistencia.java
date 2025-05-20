@@ -8,6 +8,10 @@
 
 package persistencia;
 
+import java.util.ArrayList;
+import java.util.List;
+import logica.Usuario;
+
 public class ControladoraPersistencia {
     
     OdontologoJpaController odontoJPA = new OdontologoJpaController();
@@ -18,6 +22,21 @@ public class ControladoraPersistencia {
     PacienteJpaController pacJPA = new PacienteJpaController();
     SecretarioJpaController secreJPA = new SecretarioJpaController();
     ResponsableJpaController respJPA = new ResponsableJpaController();
+    
+    public ControladoraPersistencia(){
+        
+    }    
+    
+    
+    public void crearUsuario(Usuario usu){
+        usuJPA.create(usu);
+    }
+
+    public List<Usuario> getUsuarios() {
+        
+        //traer todos los valores de la instancia
+        return usuJPA.findUsuarioEntities();
+    }
 
     
 }
